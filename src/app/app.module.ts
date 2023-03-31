@@ -7,10 +7,14 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './login/login.component';
 import { MainpageComponent } from './mainpage/mainpage.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const appRoutes : Routes = [
   {
     path : 'login', component : LoginComponent
+  },
+  {
+    path : 'forgot', component : ForgotComponent
   },
   {
     path : '', component : MainpageComponent,
@@ -29,7 +33,8 @@ const appRoutes : Routes = [
     NavbarComponent,
     DashboardComponent,
     LoginComponent,
-    MainpageComponent
+    MainpageComponent,
+    ForgotComponent
   ],
   imports: [
     BrowserModule, RouterModule.forRoot(appRoutes)
