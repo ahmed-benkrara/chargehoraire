@@ -1,6 +1,8 @@
 .test{
     background-image: url('https://images.pexels.com/photos/3776190/pexels-photo-3776190.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     background-size: cover;
+    background-color: #1654ac9d;
     background-repeat: no-repeat;
     background-position: center;
+    background-blend-mode: multiply;
 }
