@@ -16,10 +16,10 @@
             <div class="mt-6">
                 <div class="flex-1 mt-6">
                     <label class="block mb-2 text-sm text-gray-600">Email</label>
-                    <input type="email" placeholder="Email" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring" />
+                    <input type="email" id="email" [(ngModel)]="forgot.email" placeholder="Email" class="block w-full px-5 py-3 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:outline-none focus:ring" />
                 </div>
 
-                <button class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#255de1] rounded-md focus:outline-none focus:ring focus:ring-[#255de1] focus:ring-opacity-50">
+                <button (click)="search()" class="w-full px-6 py-3 mt-6 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#255de1] rounded-md focus:outline-none focus:ring focus:ring-[#255de1] focus:ring-opacity-50">
                     Search
                 </button>
             </div>

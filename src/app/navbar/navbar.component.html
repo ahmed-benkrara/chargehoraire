@@ -1,4 +1,4 @@
-<div class="w-[240px] bg-white fixed h-screen px-4 pt-5 pb-4 flex flex-col test">
+<div class="w-[240px] bg-white fixed h-screen px-4 pt-5 pb-4 sm:hidden lg:flex flex-col test">
     <div class="flex place-items-baseline h-fit" id="top">
         <div class="text-center bg-[#255ce1] text-white w-fit h-fit px-[10px] py-[4px] text-[20px] rounded-md">
             <i class="fa-solid fa-meteor"></i>
@@ -58,6 +58,88 @@
                 <p class="text-[#828bb8]">Jhon.Green@gmail.com</p>
             </div>
             <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 text-[20px] block cursor-pointer"></i>
+        </div>
+    </div>
+</div>
+
+<div class="sm:flex lg:hidden justify-between items-center px-2 py-2 shadow-md">
+    <!-- <div>
+        <img class="w-[35px] h-[35px] object-cover rounded-full" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="">
+    </div> -->
+    <div class="flex place-items-baseline h-fit">
+        <div class="text-center bg-[#255ce1] text-white w-fit h-fit px-[10px] py-[4px] text-[20px] rounded-md">
+            <i class="fa-solid fa-meteor"></i>
+        </div>
+        <p class="text-black font-bold font-tilt text-[20px] ml-[10px]">FSSM</p>
+    </div>
+    <div></div>
+    <div class="text-[#255ce1] text-[30px] cursor-pointer" (click)="animatenavshow()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+</div>
+
+<div id="smallnav" class="hidescroll bg-transparent overflow-y-scroll overflow-x-hidden w-full h-screen absolute top-0 left-[-100%] sm:block lg:hidden">
+    <div class="w-[240px] h-full bg-white px-4 pt-5 pb-4 flex flex-col test">
+        <div class="flex place-items-baseline h-fit" id="top">
+            <div class="text-center bg-[#255ce1] text-white w-fit h-fit px-[10px] py-[4px] text-[20px] rounded-md">
+                <i class="fa-solid fa-meteor"></i>
+            </div>
+            <p class="text-black font-bold font-tilt text-[20px] ml-[10px]">FS Semlalia</p>
+        </div>
+        <ul class="list-none mt-8 flex-1 overflow-hidden overflow-y-scroll" id="list">
+            <p class="text-[15px] mb-3 text-[#9ea7d2]">Menu</p>
+            <li class="listitem active" routerLink="/dashboard">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-database listicon"></i>Dashboard
+                </div>   
+            </li>
+            
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-user listicon"></i>Professors<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem">View All</li>
+                    <li class="sublistitem">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-sitemap listicon"></i>Departments<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem">View All</li>
+                    <li class="sublistitem">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-code-branch listicon"></i>Branches<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem">View All</li>
+                    <li class="sublistitem">Add New</li>
+                </ul>
+            </li>
+    
+        </ul>
+        <div class="h-fit w-full mt-[20px]" id="bottom">
+            <div class="w-full flex place-items-center justify-around text-[#333847]">
+                <img class="block w-[40px] h-[40px] rounded-full object-cover " src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="">
+                <div class="text-[12px] mx-[4px] font-tilt">
+                    <p class="font-semibold text-[14px]">Jhon Green</p>
+                    <p class="text-[#828bb8]">Jhon.Green@gmail.com</p>
+                </div>
+                <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 text-[20px] block cursor-pointer"></i>
+            </div>
         </div>
     </div>
 </div>

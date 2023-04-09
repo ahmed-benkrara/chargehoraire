@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     this.dropdown()
+    this.animatenavhide()
   }
 
   dropdown(){
@@ -36,6 +37,29 @@ export class NavbarComponent implements OnInit {
         }
       })
     })
+  }
+
+  //animate nav on small screens : screen < lg
+  //it only shows, it doesn't hide yet (the hide animation is already made in css file)
+  animatenavshow(){
+    let nav = document.getElementById('smallnav')
+    nav?.classList.remove('hidenavanimation')
+    nav?.classList.add('shownavanimation')
+    // nav?.classList.remove('shownavanimation')
+    // nav?.classList.add('hidenavanimation')
+  }
+
+  animatenavhide(){
+    document.getElementById('smallnav')?.addEventListener('click', (e) => {
+      let x = e.target as HTMLElement
+      if(x.getAttribute('id') === 'smallnav'){
+        x.classList.remove('shownavanimation')
+        x.classList.add('hidenavanimation')
+      }
+    })
+    // let nav = document.getElementById('smallnav')
+    // nav?.classList.remove('shownavanimation')
+    // nav?.classList.add('hidenavanimation')
   }
 
 }

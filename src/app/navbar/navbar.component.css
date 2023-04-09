@@ -41,7 +41,7 @@
 }
 
 .swipup{
-    animation: up 1s ease-in-out forwards;
+    animation: up 500ms ease-in-out forwards;
 }
 
 @keyframes up{
@@ -55,11 +55,11 @@
 }
 
 .slideup{
-    animation: slideup 1s ease-in-out forwards;
+    animation: slideup 500ms ease-in-out forwards;
 }
 
 .slidedown{
-    animation: slidedown 1s ease-in-out forwards;
+    animation: slidedown 500ms ease-in-out forwards;
 }
 
 @keyframes slideup{
@@ -86,7 +86,7 @@
 }
 
 /**************************************************************************************/
-/**************************************************************************************/
+/************************************Hide scroll***************************************/
 /**************************************************************************************/
 
 #list::-webkit-scrollbar {
@@ -95,4 +95,45 @@
 
 #list {
     scrollbar-width: none;
+}
+
+.hidescroll::-webkit-scrollbar {
+    width: 0px;
+}
+
+.hidescroll {
+    scrollbar-width: none;
+}
+
+/**************************************************************************************/
+/***********************************Nav Bar Animation**********************************/
+/**************************************************************************************/
+
+.hidenavanimation{
+    animation: swipeleft 500ms ease-in-out forwards;
+}
+
+
+@keyframes swipeleft{
+    from{
+        left:0;
+    }
+
+    to{
+        left:-100%;
+    }
+}
+
+.shownavanimation{
+    animation: swiperight 500ms ease-in-out forwards;
+}
+
+@keyframes swiperight{
+    from{
+        left:-100%;
+    }
+
+    to{
+        left:0;
+    }
 }
