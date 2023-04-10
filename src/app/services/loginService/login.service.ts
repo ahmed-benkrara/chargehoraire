@@ -48,4 +48,14 @@ export class LoginService {
       return false
     }
   }
+
+  //get user role
+  async getUserRole(email : string) : Promise<any>{
+    try{
+      const role = await this.http.get(ApiConfig.url+"/getRole/"+email).toPromise()
+      return role
+    }catch(err){
+      return null
+    }
+  }
 }

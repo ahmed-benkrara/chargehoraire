@@ -10,6 +10,8 @@ import { ApiConfig } from './Config/api-config';
 import { AuthguardGuard } from './guards/AuthGuard/authguard.guard';
 import { EmailtokenGuard } from './guards/AuthGuard/emailtoken.guard';
 import { OnlyguestGuard } from './guards/GuestGuard/onlyguest.guard';
+import { OnlyadminGuard } from './guards/OnlyAdmin/onlyadmin.guard';
+import { OnlyteacherGuard } from './guards/OnlyTeacher/onlyteacher.guard';
 
 //services
 import {HttpClientModule} from '@angular/common/http';
@@ -35,7 +37,7 @@ const appRoutes : Routes = [
     path : 'recover/:email/:token', component : NewpasswordComponent, canActivate : [OnlyguestGuard, EmailtokenGuard]
   },
   {
-    path : '', component : MainpageComponent, canActivate : [AuthguardGuard],
+    path : '', component : MainpageComponent, canActivate : [AuthguardGuard, OnlyadminGuard],
     children : [
       {
         path : 'dashboard', component : DashboardComponent

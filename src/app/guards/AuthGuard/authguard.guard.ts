@@ -14,7 +14,7 @@ export class AuthguardGuard implements CanActivate {
   async canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Promise<boolean | UrlTree>{
-    //this.router.navigate(['/forbidden']);
+
     if(this.cookies.check("token")){
       const token = {token : this.cookies.get("token")}
       const isAuth = await this.loginService.isAuth(token)
