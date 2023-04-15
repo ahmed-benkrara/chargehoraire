@@ -7,7 +7,7 @@
     </div>
     <ul class="list-none mt-8 flex-1 overflow-hidden overflow-y-scroll" id="list">
         <p class="text-[15px] mb-3 text-[#9ea7d2]">Menu</p>
-        <li class="listitem active" routerLink="/dashboard">
+        <li class="listitem" routerLink="/dashboard" routerLinkActive="active">
             <div class="flex place-items-baseline">
                 <i class="fa-solid fa-database listicon"></i>Dashboard
             </div>   
@@ -32,8 +32,8 @@
                 </div>
             </main>
             <ul class="pl-4 w-full h-0 overflow-hidden">
-                <li class="sublistitem">View All</li>
-                <li class="sublistitem">Add New</li>
+                <li class="sublistitem" routerLink="/departments">View All</li>
+                <li class="sublistitem" routerLink="/department/create">Add New</li>
             </ul>
         </li>
 
@@ -62,7 +62,7 @@
     </div>
 </div>
 
-<div class="sm:flex lg:hidden justify-between items-center px-2 py-2 shadow-md">
+<div class="sm:flex lg:hidden justify-between items-center px-2 py-2 shadow-sm">
     <!-- <div>
         <img class="w-[35px] h-[35px] object-cover rounded-full" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80" alt="">
     </div> -->

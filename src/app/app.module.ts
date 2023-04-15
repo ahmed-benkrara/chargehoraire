@@ -16,6 +16,9 @@ import { OnlyteacherGuard } from './guards/OnlyTeacher/onlyteacher.guard';
 //services
 import {HttpClientModule} from '@angular/common/http';
 
+//pagination
+import {NgxPaginationModule} from 'ngx-pagination';
+
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -25,6 +28,12 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { NewpasswordComponent } from './newpassword/newpassword.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ForbiddenComponent } from './forbidden/forbidden.component';
+import { AddComponent } from './Department/add/add.component';
+import { DisplayComponent } from './Department/display/display.component';
+import { EditComponent } from './Department/edit/edit.component';
+import { AddfieldComponent } from './Field/addfield/addfield.component';
+import { EditfieldComponent } from './Field/editfield/editfield.component';
+import { DisplayfieldComponent } from './Field/displayfield/displayfield.component';
 
 const appRoutes : Routes = [
   {
@@ -36,11 +45,31 @@ const appRoutes : Routes = [
   {
     path : 'recover/:email/:token', component : NewpasswordComponent, canActivate : [OnlyguestGuard, EmailtokenGuard]
   },
-  {
+  {//admin only
     path : '', component : MainpageComponent, canActivate : [AuthguardGuard, OnlyadminGuard],
     children : [
       {
         path : 'dashboard', component : DashboardComponent
+      },
+      //department
+      {
+        path : 'department/create', component : AddComponent
+      },
+      {
+        path : 'departments', component : DisplayComponent
+      },
+      {
+        path : 'department/edit/:id', component : EditComponent
+      },
+      //field
+      {
+        path : 'field/create', component : AddfieldComponent
+      },
+      {
+        path : 'fields', component : DisplayfieldComponent
+      },
+      {
+        path : 'field/edit/:id', component : EditfieldComponent
       }
     ]
   },
@@ -63,12 +92,19 @@ const appRoutes : Routes = [
     NewpasswordComponent,
     PageNotFoundComponent,
     ForbiddenComponent,
+    AddComponent,
+    DisplayComponent,
+    EditComponent,
+    AddfieldComponent,
+    EditfieldComponent,
+    DisplayfieldComponent,
   ],
   imports: [
     BrowserModule, 
     RouterModule.forRoot(appRoutes),
     HttpClientModule, 
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [ApiConfig],
   bootstrap: [AppComponent]

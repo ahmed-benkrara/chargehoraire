@@ -330,7 +330,9 @@ module.exports = {
       tilt: [
         'Tilt Neon', 'cursive'
       ],
-      kodchasan: ['Kodchasan', 'sans-serif']
+      kodchasan: ['Kodchasan', 'sans-serif'],
+      poppins: ['Poppins', 'sans-serif'],
+      roboto: ['Roboto Slab', 'serif']
     },
     fontSize: {
       xs: ['0.75rem', { lineHeight: '1rem' }],
