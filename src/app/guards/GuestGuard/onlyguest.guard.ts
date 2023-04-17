@@ -18,7 +18,7 @@ export class OnlyguestGuard implements CanActivate {
       const token = {token : this.cookies.get("token")}
       const isAuth = await this.loginService.isAuth(token)
       if(isAuth){
-        this.router.navigate(['/'])
+        this.router.navigate(['/admin/dashboard'])
         return false
       }else{
         return true

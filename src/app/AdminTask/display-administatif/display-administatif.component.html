@@ -1,0 +1,63 @@
+<div class="mt-7 ml-12 ">
+    <div class="flex place-items-center">
+        <h1 class="font-roboto font-semibold text-[26px] text-[#3b3b3b]">Administrative Task</h1>
+        <div class="ml-2 w-[120px] h-[2px] bg-[#255ce1] rounded-full"></div>
+    </div>
+</div>
+
+<div class="w-full px-4 mt-16">
+    <h1 class="font-poppins font-medium text-[22px]">Departments list.</h1>
+    <h2 class="font-poppins text-[#44566c] font-medium text-[15px]">A list of all administrative tasks in our database.</h2>
+    <div class="relative overflow-x-auto shadow-sm mt-4">
+        <table class="w-full text-sm text-left text-gray-500 font-tilt rounded-lg overflow-hidden">
+            <thead class="text-[16px] text-gray-700 bg-gray-50">
+                <tr>
+                    <th scope="col" class="px-7 py-5 font-tilt">
+                        #
+                    </th>
+                    <th scope="col" class="px-7 py-5 font-tilt">
+                        Professor
+                    </th>
+                    <th scope="col" class="px-7 py-5 font-tilt">
+                        Department
+                    </th>
+                    <th scope="col" class="px-7 py-5 font-tilt">
+                        Hours
+                    </th>
+                    <th scope="col" class="px-7 py-5 font-tilt">
+                        Year
+                    </th>
+                    <th scope="col" class="px-7 py-5 font-tilt">
+                        Actions
+                    </th>
+                </tr>
+            </thead>
+            <tbody class="text-[15px]">
+                <tr class="bg-white" *ngFor="let item of admin | paginate: { itemsPerPage: itemsperpage, currentPage: p }; let i = index">
+                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap">
+                        {{ i+1 }}
+                    </th>
+                    <td class="px-6 py-4">
+                        {{ item.professor.name }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ item.department.name }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ item.hours }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ item.year.name }}
+                    </td>
+                    <td class="px-6 py-4">
+                        <a href="/admin/administratif/edit/{{item.professor.id}}/{{item.year.name}}/{{item.department.id}}" class="font-medium text-blue-600 hover:underline mr-2">Edit</a>
+                        <a (click)="delete(i,{teacher_id : item.professor.id, department_id : item.department.id, year : item.year.name, hours : 0})" class="cursor-pointer font-medium text-red-600 hover:underline">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+    <div class="mt-4">
+        <pagination-controls class="my-pagination" (pageChange)="p = $event" previousLabel="<" nextLabel=">"></pagination-controls>
+    </div>
+</div>

@@ -1,4 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { CookieService } from 'ngx-cookie-service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ export class NavbarComponent implements OnInit {
   
   //@ViewChild('test') test! : ElementRef;
   
-  constructor(){
+  constructor(private cookies : CookieService){
 
   }
 
@@ -62,4 +63,10 @@ export class NavbarComponent implements OnInit {
     // nav?.classList.add('hidenavanimation')
   }
 
+  logout(){
+    this.cookies.delete('token')
+    setTimeout(() => {
+      location.reload()
+    },2000)
+  }
 }

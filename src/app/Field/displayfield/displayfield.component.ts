@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FieldService } from 'src/app/services/fieldService/field.service';
 
 @Component({
@@ -6,18 +6,17 @@ import { FieldService } from 'src/app/services/fieldService/field.service';
   templateUrl: './displayfield.component.html',
   styleUrls: ['./displayfield.component.css']
 })
-export class DisplayfieldComponent {
+export class DisplayfieldComponent implements OnInit{
   constructor(private fieldService:FieldService){}
 
   data : any = []
   p : number = 1
-  itemsperpage : number = 1
+  itemsperpage : number = 25
 
   ngOnInit(): void {
     this.fieldService.read().subscribe(
       (response) => {
         this.data = response
-        console.log(this.data)
       }
     )
   }

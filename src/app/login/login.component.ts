@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
             let date = new Date()
             date.setHours(date.getHours() + 24)
             this.cookieService.set('token', response.token, date)
+            location.reload()
           },
           (error) => {
             alert(error.error.message || "Connection failure !")

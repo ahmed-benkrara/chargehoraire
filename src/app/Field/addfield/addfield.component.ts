@@ -22,7 +22,6 @@ export class AddfieldComponent implements OnInit{
     this.departmentService.read().subscribe(
       (response) => {
         this.departments = response
-        console.log(this.departments)
       }
     )
   }

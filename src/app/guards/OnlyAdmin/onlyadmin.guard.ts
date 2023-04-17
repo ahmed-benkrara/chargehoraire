@@ -21,7 +21,8 @@ export class OnlyadminGuard implements CanActivate {
         if(role.toLowerCase() == "admin"){
           return true;
         }else{
-          this.router.navigate(['/forbidden'])
+          console.log(role)
+          this.router.navigate(['/professor/tasktime'])
           return false;
         }
       }else{

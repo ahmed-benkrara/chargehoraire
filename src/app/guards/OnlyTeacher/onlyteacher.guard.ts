@@ -21,7 +21,7 @@ export class OnlyteacherGuard implements CanActivate {
         if(role.toLowerCase() == "teacher"){
           return true;
         }else{
-          this.router.navigate(['/forbidden'])
+          this.router.navigate(['/admin/dashboard'])
           return false;
         }
       }else{

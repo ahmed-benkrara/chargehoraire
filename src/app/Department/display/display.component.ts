@@ -16,7 +16,7 @@ export class DisplayComponent implements OnInit{
 
   data : dep[] = []
   p : number = 1
-  itemsperpage : number = 1
+  itemsperpage : number = 25
 
   ngOnInit(): void {
     this.departmentService.read().subscribe(

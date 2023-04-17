@@ -7,7 +7,7 @@
     </div>
     <ul class="list-none mt-8 flex-1 overflow-hidden overflow-y-scroll" id="list">
         <p class="text-[15px] mb-3 text-[#9ea7d2]">Menu</p>
-        <li class="listitem" routerLink="/dashboard" routerLinkActive="active">
+        <li class="listitem" routerLink="/admin/dashboard" routerLinkActive="active">
             <div class="flex place-items-baseline">
                 <i class="fa-solid fa-database listicon"></i>Dashboard
             </div>   
@@ -20,8 +20,8 @@
                 </div>
             </main>
             <ul class="pl-4 w-full h-0 overflow-hidden">
-                <li class="sublistitem">View All</li>
-                <li class="sublistitem">Add New</li>
+                <li class="sublistitem" routerLink="/admin/professors">View All</li>
+                <li class="sublistitem" routerLink="/admin/professor/create">Add New</li>
             </ul>
         </li>
 
@@ -32,8 +32,8 @@
                 </div>
             </main>
             <ul class="pl-4 w-full h-0 overflow-hidden">
-                <li class="sublistitem" routerLink="/departments">View All</li>
-                <li class="sublistitem" routerLink="/department/create">Add New</li>
+                <li class="sublistitem" routerLink="/admin/departments">View All</li>
+                <li class="sublistitem" routerLink="/admin/department/create">Add New</li>
             </ul>
         </li>
 
@@ -44,8 +44,80 @@
                 </div>
             </main>
             <ul class="pl-4 w-full h-0 overflow-hidden">
-                <li class="sublistitem">View All</li>
-                <li class="sublistitem">Add New</li>
+                <li class="sublistitem" routerLink="/admin/fields">View All</li>
+                <li class="sublistitem" routerLink="/admin/field/create">Add New</li>
+            </ul>
+        </li>
+
+        <li class="navdropdown">
+            <main class="listitem">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-calendar listicon"></i>Years<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                </div>
+            </main>
+            <ul class="pl-4 w-full h-0 overflow-hidden">
+                <li class="sublistitem" routerLink="/admin/years">View All</li>
+                <li class="sublistitem" routerLink="/admin/year/create">Add New</li>
+            </ul>
+        </li>
+
+        <li class="navdropdown">
+            <main class="listitem">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-leaf listicon"></i>Session<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                </div>
+            </main>
+            <ul class="pl-4 w-full h-0 overflow-hidden">
+                <li class="sublistitem" routerLink="/admin/sessions">View All</li>
+                <li class="sublistitem" routerLink="/admin/session/create">Add New</li>
+            </ul>
+        </li>
+
+        <li class="navdropdown">
+            <main class="listitem">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-graduation-cap listicon"></i>Semester<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                </div>
+            </main>
+            <ul class="pl-4 w-full h-0 overflow-hidden">
+                <li class="sublistitem" routerLink="/admin/semesters">View All</li>
+                <li class="sublistitem" routerLink="/admin/semester/create">Add New</li>
+            </ul>
+        </li>
+
+        <li class="navdropdown">
+            <main class="listitem">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-cubes-stacked listicon"></i>Task Type<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                </div>
+            </main>
+            <ul class="pl-4 w-full h-0 overflow-hidden">
+                <li class="sublistitem" routerLink="/admin/typehs">View All</li>
+                <li class="sublistitem" routerLink="/admin/typeh/create">Add New</li>
+            </ul>
+        </li>
+
+        <li class="navdropdown">
+            <main class="listitem">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-list-check listicon"></i>Administrative Task<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                </div>
+            </main>
+            <ul class="pl-4 w-full h-0 overflow-hidden">
+                <li class="sublistitem" routerLink="/admin/administratifs">View All</li>
+                <li class="sublistitem" routerLink="/admin/administratif/create">Add New</li>
+            </ul>
+        </li>
+
+        <li class="navdropdown">
+            <main class="listitem">
+                <div class="flex place-items-baseline">
+                    <i class="fa-solid fa-chalkboard-user listicon"></i>Module Task<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                </div>
+            </main>
+            <ul class="pl-4 w-full h-0 overflow-hidden">
+                <li class="sublistitem" routerLink="/admin/teaches">View All</li>
+                <li class="sublistitem" routerLink="/admin/teaches/create">Add New</li>
             </ul>
         </li>
 
@@ -57,7 +129,7 @@
                 <p class="font-semibold text-[14px]">Jhon Green</p>
                 <p class="text-[#828bb8]">Jhon.Green@gmail.com</p>
             </div>
-            <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 text-[20px] block cursor-pointer"></i>
+            <i (click)="logout()" class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 text-[20px] block cursor-pointer"></i>
         </div>
     </div>
 </div>
@@ -88,7 +160,7 @@
         </div>
         <ul class="list-none mt-8 flex-1 overflow-hidden overflow-y-scroll" id="list">
             <p class="text-[15px] mb-3 text-[#9ea7d2]">Menu</p>
-            <li class="listitem active" routerLink="/dashboard">
+            <li class="listitem" routerLink="/admin/dashboard" routerLinkActive="active">
                 <div class="flex place-items-baseline">
                     <i class="fa-solid fa-database listicon"></i>Dashboard
                 </div>   
@@ -101,8 +173,8 @@
                     </div>
                 </main>
                 <ul class="pl-4 w-full h-0 overflow-hidden">
-                    <li class="sublistitem">View All</li>
-                    <li class="sublistitem">Add New</li>
+                    <li class="sublistitem" routerLink="/admin/professors">View All</li>
+                    <li class="sublistitem" routerLink="/admin/professor/create">Add New</li>
                 </ul>
             </li>
     
@@ -113,8 +185,8 @@
                     </div>
                 </main>
                 <ul class="pl-4 w-full h-0 overflow-hidden">
-                    <li class="sublistitem">View All</li>
-                    <li class="sublistitem">Add New</li>
+                    <li class="sublistitem" routerLink="/admin/departments">View All</li>
+                    <li class="sublistitem" routerLink="/admin/department/create">Add New</li>
                 </ul>
             </li>
     
@@ -125,8 +197,80 @@
                     </div>
                 </main>
                 <ul class="pl-4 w-full h-0 overflow-hidden">
-                    <li class="sublistitem">View All</li>
-                    <li class="sublistitem">Add New</li>
+                    <li class="sublistitem" routerLink="/admin/fields">View All</li>
+                    <li class="sublistitem" routerLink="/admin/field/create">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-calendar listicon"></i>Years<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem" routerLink="/admin/years">View All</li>
+                    <li class="sublistitem" routerLink="/admin/year/create">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-leaf listicon"></i>Session<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem" routerLink="/admin/sessions">View All</li>
+                    <li class="sublistitem" routerLink="/admin/session/create">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-graduation-cap listicon"></i>Semester<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem" routerLink="/admin/semesters">View All</li>
+                    <li class="sublistitem" routerLink="/admin/semester/create">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-cubes-stacked listicon"></i>Task Type<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem" routerLink="/admin/typehs">View All</li>
+                    <li class="sublistitem" routerLink="/admin/typeh/create">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-list-check listicon"></i>Administrative Task<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem" routerLink="/admin/administratifs">View All</li>
+                    <li class="sublistitem" routerLink="/admin/administratif/create">Add New</li>
+                </ul>
+            </li>
+    
+            <li class="navdropdown">
+                <main class="listitem">
+                    <div class="flex place-items-baseline">
+                        <i class="fa-solid fa-chalkboard-user listicon"></i>Module Task<i class="fa-solid fa-chevron-down block ml-auto"></i>
+                    </div>
+                </main>
+                <ul class="pl-4 w-full h-0 overflow-hidden">
+                    <li class="sublistitem" routerLink="/admin/teaches">View All</li>
+                    <li class="sublistitem" routerLink="/admin/teaches/create">Add New</li>
                 </ul>
             </li>
     
@@ -138,7 +282,7 @@
                     <p class="font-semibold text-[14px]">Jhon Green</p>
                     <p class="text-[#828bb8]">Jhon.Green@gmail.com</p>
                 </div>
-                <i class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 text-[20px] block cursor-pointer"></i>
+                <i (click)="logout()" class="fa-solid fa-arrow-right-from-bracket fa-rotate-180 text-[20px] block cursor-pointer"></i>
             </div>
         </div>
     </div>

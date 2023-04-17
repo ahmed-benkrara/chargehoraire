@@ -1,0 +1,48 @@
+.my-pagination ::ng-deep .ngx-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current{
+    background: #255ce1;
+    color:white;
+    border-radius: 50%;
+    width:35px;
+    height:35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0 2px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a{
+    color: #255ce1 !important;
+    width:35px;
+    height:35px;
+    border-radius: 50%;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin:0 2px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a:before{
+    content:"";
+    width: 0;
+    height: 0;
+}
+
+.my-pagination ::ng-deep .ngx-pagination a:after{
+    content:"";
+    width: 0;
+    height: 0;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .disabled:before{
+    content:"";
+}
+
+.my-pagination ::ng-deep .ngx-pagination .disabled:after{
+    content:"";
+}

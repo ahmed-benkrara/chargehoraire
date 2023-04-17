@@ -48,7 +48,7 @@ export class EditComponent implements OnInit{
           alert("updated succesfully !")
         },  
         (err) => {
-          alert("something went wring please try again later !")
+          alert("something went wrong please try again later !")
         }
       )
     }
