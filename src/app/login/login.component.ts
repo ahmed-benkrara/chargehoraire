@@ -40,7 +40,9 @@ export class LoginComponent implements OnInit {
           (response) => {
             let date = new Date()
             date.setHours(date.getHours() + 24)
+            this.cookieService.deleteAll()
             this.cookieService.set('token', response.token, date)
+            this.cookieService.set('email', this.loginInfo.email, date)
             location.reload()
           },
           (error) => {

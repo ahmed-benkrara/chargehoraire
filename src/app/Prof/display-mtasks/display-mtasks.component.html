@@ -8,8 +8,8 @@
 <div class="w-full px-4 mt-16">
     <h1 class="font-poppins font-medium text-[22px]">Module tasks list.</h1>
     <h2 class="font-poppins text-[#44566c] font-medium text-[15px]">A list of all module tasks in our database.</h2>
-    <div class="relative overflow-x-auto shadow-sm mt-4">
-        <table class="w-full text-sm text-left text-gray-500 font-tilt rounded-lg overflow-hidden">
+    <div class="relative overflow-x-auto shadow-sm mt-4" [innerHTML]="t">
+        <!-- <table class="w-full text-sm text-left text-gray-500 font-tilt rounded-lg overflow-hidden">
             <thead class="text-[16px] text-gray-700 bg-gray-50">
                 <tr>
                     <th scope="col" class="px-7 py-5 font-tilt">
@@ -21,8 +21,8 @@
                     <th scope="col" class="px-7 py-5 font-tilt">
                         Module
                     </th>
-                    <th scope="col" class="px-7 py-5 font-tilt">
-                        Type
+                    <th *ngFor="let item of types" scope="col" class="px-7 py-5 font-tilt">
+                        {{ item.name }}
                     </th>
                     <th scope="col" class="px-7 py-5 font-tilt">
                         Hours
@@ -39,36 +39,38 @@
                 </tr>
             </thead>
             <tbody class="text-[15px]">
-                <tr class="bg-white" *ngFor="let item of teaches | paginate: { itemsPerPage: itemsperpage, currentPage: p }; let i = index">
-                    <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap">
-                        {{ i+1 }}
-                    </th>
-                    <td class="px-6 py-4">
-                        {{ item.professor.name }}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ item.module.name }}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ item.typeh.name }}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ item.hours }}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ item.year.name }}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ item.semester.name }}
-                    </td>
-                    <td class="px-6 py-4">
-                        {{ item.session.name }}
-                    </td>
-                </tr>
+                <div *ngFor="let item of getObjectKeys(test)">
+                    <div *ngFor="let it of getObjectKeys(test[item])">
+                        <tr class="bg-white">
+                            <th scope="row" class="px-6 py-3 font-medium text-gray-900 whitespace-nowrap">
+                                {{ 1 }}
+                            </th>
+                            <td class="px-6 py-4">
+                                x
+                            </td>
+                            <td class="px-6 py-4">
+                               x
+                            </td>
+                            <td *ngFor="let item of types" class="px-6 py-4">
+                                s
+                            </td>
+                            <td class="px-6 py-4">
+                                
+                            </td>
+                            <td class="px-6 py-4">
+                                
+                            </td>
+                            <td class="px-6 py-4">
+                                
+                            </td>
+                            <td class="px-6 py-4">
+                                
+                            </td>
+                        </tr>
+                        
+                    </div>
+                </div>
             </tbody>
-        </table>
+        </table> -->
     </div>    
-    <div class="mt-4">
-        <pagination-controls class="my-pagination" (pageChange)="p = $event" previousLabel="<" nextLabel=">"></pagination-controls>
-    </div>
 </div>

@@ -58,4 +58,9 @@ export class LoginService {
       return null
     }
   }
+
+  getUserName(email : {token : string}) : Observable<any>{
+    const headers = new HttpHeaders().set('Content-Type', 'application/json');
+    return this.http.post(ApiConfig.url+"/getUserName",email, {headers});
+  }
 }
